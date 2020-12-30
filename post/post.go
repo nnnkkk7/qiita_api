@@ -13,7 +13,7 @@ type Item struct {
 	body  string `json:"body"`
 }
 
-func getQiita(c echo.Context) error {
+func (i *Item) getQiita(c echo.Context) error {
 	resp, err := http.Get("http://qiita.com/api/v2/items?page=1")
 	if err != nil {
 		return err
